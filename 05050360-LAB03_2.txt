@@ -1,0 +1,18 @@
+float Analogin=0;
+float k=0;
+void setup() {
+ Serial.begin(9600);
+pinMode(14,OUTPUT);
+}
+void loop() {
+  int i;
+  for(i=0;i<=5;i++)
+  Analogin = 0.7* Analogin + 0.3* analogRead(A0);
+  k=Analogin*2.5/4095;
+  Serial.println("AnaloginÅª­È:");
+ Serial.println(Analogin);
+ Serial.println("±À´ú¹qÀ£(V):");
+  Serial.println(k);
+    Serial.println(" ");
+ delay(1000);
+}
