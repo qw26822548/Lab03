@@ -1,0 +1,23 @@
+void setup() {
+Serial.begin(9600);
+Serial.print("Hello World.\n");
+pinMode(7,OUTPUT);
+}
+
+void loop() {
+if(Serial.available())
+{
+  char a=Serial.read();
+  if(a=='1')
+  {
+    digitalWrite(7,HIGH);
+    Serial.print("LED ON\n");
+  }
+  else if(a=='0')
+  {
+    digitalWrite(7,LOW);
+    Serial.print("LED OFF\n");
+  }
+}
+
+}
